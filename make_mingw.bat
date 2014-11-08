@@ -75,7 +75,9 @@ copy .\GvimExt\*.dll "%OUTDIR%"
 copy *.dll "%OUTDIR%"
 copy .\xxd\*.exe "%OUTDIR%"
 
-xcopy /V /E /Y %VIM_SRC%\runtime\* "%OUTDIR%"
+xcopy /V /E /Y %VIM_SRC%\runtime\* "%OUTDIR%\runtime\"
 
 cd ..
+
+echo show "http://stackoverflow.com/questions/9764341/runtime-error-with-vim-omnicompletion/10257098"
 endlocal
