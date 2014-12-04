@@ -42,10 +42,14 @@ set PYTHON3=C:\tools\Python
 set PYTHON3_VER=34
 set DYNAMIC_PYTHON3=yes
 
-set RUBY=C:\tools\ruby213
+::set RUBY=C:\tools\ruby213
+::set DYNAMIC_RUBY=yes
+::set RUBY_VER=21
+::set RUBY_VER_LONG=2.1.0
+set RUBY=C:\tools\ruby200
 set DYNAMIC_RUBY=yes
-set RUBY_VER=21
-set RUBY_VER_LONG=2.1.0
+set RUBY_VER=20
+set RUBY_VER_LONG=2.0.0
 
 :: ActiveScriptRuby
 :: set RUBY_PLATFORM=i386-mswin32_100

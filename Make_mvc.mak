@@ -912,10 +912,10 @@ XSUBPP_TYPEMAP = $(PERL)\lib\ExtUtils\typemap
 !ifdef RUBY
 #  Set default value
 !ifndef RUBY_VER
-RUBY_VER = 18
+RUBY_VER = 20
 !endif
 !ifndef RUBY_VER_LONG
-RUBY_VER_LONG = 1.8
+RUBY_VER_LONG = 2.0
 !endif
 !ifndef RUBY_API_VER
 RUBY_API_VER = $(RUBY_VER_LONG:.=)

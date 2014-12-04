@@ -6,6 +6,8 @@ set Include=%Include%;"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Inclu
 set USERNAME=electron226
 set USERDOMAIN=electron226@gmail.com
 
+set WINVER=0x0500
+
 set IME=yes
 set DYNAMIC_IME=yes
 set MBYTE=yes
@@ -39,10 +41,14 @@ set PYTHON3=C:\tools\Python
 set PYTHON3_VER=34
 set DYNAMIC_PYTHON3=yes
 
-set RUBY=C:\tools\ruby213
+:: RUBY set source code of it.
+set RUBY=F:\Source\ruby
 set DYNAMIC_RUBY=yes
-set RUBY_VER=21
-set RUBY_VER_LONG=2.1.0
+set RUBY_VER=20
+set RUBY_VER_LONG=2.0.0
+set RUBY_INSTALL_NAME=x64-msvcrt-ruby$(RUBY_API_VER)
+set RUBY_PLATFORM=x64-mswin64_120
+set RUBY_INC=/I "$(RUBY)\include" /I "$(RUBY)\win32\.ext\include\$(RUBY_PLATFORM)"
 
 :: ActiveScriptRuby
 :: set RUBY_PLATFORM=i386-mswin32_100
@@ -72,7 +78,7 @@ copy .\GvimExt\*.dll "%OUTDIR%"
 copy *.dll "%OUTDIR%"
 copy .\xxd\*.exe "%OUTDIR%"
 
-xcopy /V /E /Y %VIM_SRC%\runtime\* "%OUTDIR%\runtime\"
+::xcopy /V /E /Y %VIM_SRC%\runtime\* "%OUTDIR%\runtime\"
 
 cd ..
 
