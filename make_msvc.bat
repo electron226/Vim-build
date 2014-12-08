@@ -68,10 +68,10 @@ nmake -f Make_mvc.mak GUI=yes clean CPU=AMD64 ARCH=x86-64
 nmake -f Make_mvc.mak GUI=no  clean CPU=AMD64 ARCH=x86-64
 
 :: GUI x64
-nmake -f Make_mvc.mak GUI=yes OLE=no FEATURES=HOGE CPU=AMD64 ARCH=x86-64
+nmake -f Make_mvc.mak GUI=yes OLE=yes FEATURES=HOGE CPU=AMD64 ARCH=x86-64
 
 :: console x64
-nmake -f Make_mvc.mak GUI=no OLE=no FEATURES=HOGE CPU=AMD64 ARCH=x86-64
+nmake -f Make_mvc.mak GUI=no OLE=yes FEATURES=HOGE CPU=AMD64 ARCH=x86-64
 
 copy *.exe "%OUTDIR%"
 copy .\GvimExt\*.dll "%OUTDIR%"

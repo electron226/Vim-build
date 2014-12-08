@@ -527,8 +527,14 @@ ifeq ($(OPTIMIZE), SIZE)
 CFLAGS += -Os
 else
 ifeq ($(OPTIMIZE), MAXSPEED)
+
 CFLAGS += -O3
+ifeq ($(CC), clang)
+CFLAGS += -fomit-frame-pointer
+else
 CFLAGS += -fomit-frame-pointer -freg-struct-return
+endif
+
 else  # SPEED
 CFLAGS += -O2
 endif

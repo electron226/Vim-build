@@ -4,7 +4,7 @@ set VIM_SRC=%CD%\..\vim
 set OUTDIR=%CD%\bin
 
 :: path to MinGw64
-set PATH=C:\tools\mingw\bin;%PATH%
+set PATH=F:\local\mingw64\mingw64\bin;%PATH%
 
 set USERNAME=electron226
 set USERDOMAIN=electron226@gmail.com
@@ -35,18 +35,18 @@ set LUA_VER=51
 :: set PERLLIB=C:\Perl64\lib
 :: set DYNAMIC_PERL=yes
 
-set PYTHON=C:\tools\Python2
+set PYTHON=F:\local\Python27
 set PYTHON_VER=27
 set DYNAMIC_PYTHON=yes
-set PYTHON3=C:\tools\Python
+set PYTHON3=F:\local\Python34
 set PYTHON3_VER=34
 set DYNAMIC_PYTHON3=yes
 
-::set RUBY=C:\tools\ruby213
+::set RUBY=F:\local\ruby213
 ::set DYNAMIC_RUBY=yes
 ::set RUBY_VER=21
 ::set RUBY_VER_LONG=2.1.0
-set RUBY=C:\tools\ruby200
+set RUBY=F:\local\Ruby200-x64
 set DYNAMIC_RUBY=yes
 set RUBY_VER=20
 set RUBY_VER_LONG=2.0.0
@@ -69,10 +69,10 @@ mingw32-make -f Make_ming.mak GUI=yes clean ARCH=x86-64
 mingw32-make -f Make_ming.mak GUI=no  clean ARCH=x86-64
 
 :: GUI x64
-mingw32-make -f Make_ming.mak GUI=yes OLE=no FEATURES=HOGE ARCH=x86-64
+mingw32-make -f Make_ming.mak GUI=yes OLE=yes FEATURES=HOGE ARCH=x86-64
 
 :: console x64
-mingw32-make -f Make_ming.mak GUI=no OLE=no FEATURES=HOGE ARCH=x86-64
+mingw32-make -f Make_ming.mak GUI=no OLE=yes FEATURES=HOGE ARCH=x86-64
 
 copy *.exe "%OUTDIR%"
 copy .\GvimExt\*.dll "%OUTDIR%"
