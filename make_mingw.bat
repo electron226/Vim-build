@@ -4,29 +4,19 @@ set VIM_SRC=%CD%\..\vim
 set OUTDIR=%CD%\bin
 
 :: path to MinGw64
-set PATH=F:\local\mingw64\mingw64\bin;%PATH%
+set MINGW_HOME=E:\local\mingw-w64\x86_64-5.1.0-win32-seh-rt_v4-rev0\mingw64
+set PATH=%MINGW_HOME%;%PATH%
 
 set USERNAME=electron226
 set USERDOMAIN=electron226@gmail.com
 
-set IME=yes
-set DYNAMIC_IME=yes
-set MBYTE=yes
-set ICONV=yes
-set GETTEXT=yes
-set DEBUG=no
-
-:: DirectWrite
-set DIRECTX=yes
-set STATIC_STDCPLUS=yes
-
 :: LuaJIT
-set LUA=F:\local\LuaJIT-2.0.3
+set LUA=E:\local\LuaJIT-2.0.4
 set DYNAMIC_LUA=yes
 set LUA_VER=51
 
 :: Lua
-::set LUA=F:\local\lua
+::set LUA=E:\local\lua
 ::set DYNAMIC_LUA=yes
 ::set LUA_VER=52
 
@@ -35,17 +25,17 @@ set LUA_VER=51
 :: set PERLLIB=C:\Perl64\lib
 :: set DYNAMIC_PERL=yes
 
-set PYTHON=F:\local\Python27
+set PYTHON=E:\local\python27
 set PYTHON_VER=27
 set DYNAMIC_PYTHON=yes
-set PYTHON3=F:\local\Python34
+set PYTHON3=E:\local\Python34
 set PYTHON3_VER=34
 set DYNAMIC_PYTHON3=yes
 
-set RUBY=F:\local\Ruby21-x64
+set RUBY=E:\local\Ruby22-x64
 set DYNAMIC_RUBY=yes
-set RUBY_VER=21
-set RUBY_VER_LONG=2.1.0
+set RUBY_VER=22
+set RUBY_VER_LONG=2.2.0
 
 :: ActiveScriptRuby
 :: set RUBY_PLATFORM=i386-mswin32_100
@@ -61,14 +51,13 @@ copy Make_cyg_ming.mak %VIM_SRC%\src
 cd %VIM_SRC%\src
 
 :: Clean
-mingw32-make -f Make_ming.mak GUI=yes clean ARCH=x86-64
-mingw32-make -f Make_ming.mak GUI=no  clean ARCH=x86-64
+mingw32-make -f Make_ming.mak clean
 
 :: GUI x64
-mingw32-make -f Make_ming.mak GUI=yes OLE=yes FEATURES=HOGE ARCH=x86-64
+mingw32-make -f Make_ming.mak GUI=yes OLE=yes FEATURES=HOGE ARCH=x86-64 DIRECTX=yes STATIC_STDCPLUS=yes IME=yes DYNAMIC_IME=yes MBYTE=yes ICONV=yes GETTEXT=yes DEBUG=no
 
 :: console x64
-mingw32-make -f Make_ming.mak GUI=no OLE=yes FEATURES=HOGE ARCH=x86-64
+mingw32-make -f Make_ming.mak GUI=no OLE=yes FEATURES=HOGE ARCH=x86-64 DIRECTX=yes STATIC_STDCPLUS=yes IME=yes DYNAMIC_IME=yes MBYTE=yes ICONV=yes GETTEXT=yes DEBUG=no
 
 copy *.exe "%OUTDIR%"
 copy .\GvimExt\*.dll "%OUTDIR%"

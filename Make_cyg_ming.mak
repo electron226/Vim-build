@@ -152,7 +152,7 @@ LUA_VER=51
 endif
 
 ifeq (no,$(DYNAMIC_LUA))
-LUA_LIB = -L$(LUA)/src -llua
+LUA_LIB = -L$(LUA)/lib -llua
 endif
 
 endif
@@ -397,7 +397,7 @@ endif
 endif
 
 ifdef PERL
-CFLAGS += -I$(PERLLIBS) -DFEAT_PERL
+CFLAGS += -I$(PERLLIBS) -DFEAT_PERL -DPERL_IMPLICIT_CONTEXT -DPERL_IMPLICIT_SYS
 ifeq (yes, $(DYNAMIC_PERL))
 CFLAGS += -DDYNAMIC_PERL -DDYNAMIC_PERL_DLL=\"perl$(PERL_VER).dll\"
 EXTRA_LIBS += -L$(PERLLIBS) -lperl$(PERL_VER)
@@ -532,11 +532,7 @@ CFLAGS += -Os
 else
 ifeq ($(OPTIMIZE), MAXSPEED)
 CFLAGS += -O3
-ifeq ($(CC), clang)
-CFLAGS += -fomit-frame-pointer
-else
 CFLAGS += -fomit-frame-pointer -freg-struct-return
-endif
 else  # SPEED
 CFLAGS += -O2
 endif
