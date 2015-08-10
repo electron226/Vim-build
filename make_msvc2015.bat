@@ -1,7 +1,7 @@
 setlocal
-set VIM_SRC=%CD%\..\vim
-set OUTDIR=%CD%\bin
-set Include=%Include%;"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include"
+set VIM_SRC="%CD%\..\vim"
+set OUTDIR="%CD%\bin"
+set Include="%Include%";"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include"
 
 set USERNAME=electron226
 set USERDOMAIN=electron226@gmail.com
@@ -51,23 +51,48 @@ set DYNAMIC_PYTHON3=yes
 ::set RUBY_PLATFORM=x64-mingw32
 ::set RUBY_INC="/I $(RUBY)\include /I $(RUBY)\include\ruby-$(RUBY_VER_LONG)\x64-mingw32"
 
-del /Q bin
-rmdir bin
+set PERL=E:\local\Perl64
+set DYNAMIC_PERL=yes
+set PERL_VER=520
 
-md bin
-copy iconv.dll bin
+rmdir /S /Q "%OUTDIR%"
+
+md "%OUTDIR%"
+copy iconv.dll "%OUTDIR%"
 :: Makefile with LUAJIT.
 copy Make_mvc.mak %VIM_SRC%\src
 cd %VIM_SRC%\src
 
 :: Clean
-nmake -f Make_mvc.mak clean
+nmake -f Make_mvc.mak clean ^
+GUI=yes ^
+OLE=yes ^
+FEATURES=HOGE ^
+CPU=AMD64 ^
+ARCH=x86-64
+
+nmake -f Make_mvc.mak clean ^
+GUI=no ^
+OLE=yes ^
+FEATURES=HOGE ^
+CPU=AMD64 ^
+ARCH=x86-64
 
 :: GUI x64
-nmake -f Make_mvc.mak GUI=yes OLE=yes FEATURES=HOGE CPU=AMD64 ARCH=x86-64
+nmake -f Make_mvc.mak ^
+GUI=yes ^
+OLE=yes ^
+FEATURES=HOGE ^
+CPU=AMD64 ^
+ARCH=x86-64
 
 :: console x64
-nmake -f Make_mvc.mak GUI=no OLE=yes FEATURES=HOGE CPU=AMD64 ARCH=x86-64
+nmake -f Make_mvc.mak ^
+GUI=no ^
+OLE=yes ^
+FEATURES=HOGE ^
+CPU=AMD64 ^
+ARCH=x86-64
 
 copy *.exe "%OUTDIR%"
 copy .\GvimExt\*.dll "%OUTDIR%"
