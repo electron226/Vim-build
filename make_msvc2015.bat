@@ -59,40 +59,42 @@ rmdir /S /Q "%OUTDIR%"
 
 md "%OUTDIR%"
 copy iconv.dll "%OUTDIR%"
+copy libintl.dll "%OUTDIR%"
+
 :: Makefile with LUAJIT.
 copy Make_mvc.mak %VIM_SRC%\src
 cd %VIM_SRC%\src
 
 :: Clean
 nmake -f Make_mvc.mak clean ^
-GUI=yes ^
-OLE=yes ^
-FEATURES=HOGE ^
-CPU=AMD64 ^
-ARCH=x86-64
+    GUI=yes ^
+    OLE=yes ^
+    FEATURES=HOGE ^
+    CPU=AMD64 ^
+    ARCH=x86-64
 
 nmake -f Make_mvc.mak clean ^
-GUI=no ^
-OLE=yes ^
-FEATURES=HOGE ^
-CPU=AMD64 ^
-ARCH=x86-64
+    GUI=no ^
+    OLE=yes ^
+    FEATURES=HOGE ^
+    CPU=AMD64 ^
+    ARCH=x86-64
 
 :: GUI x64
 nmake -f Make_mvc.mak ^
-GUI=yes ^
-OLE=yes ^
-FEATURES=HOGE ^
-CPU=AMD64 ^
-ARCH=x86-64
+    GUI=yes ^
+    OLE=yes ^
+    FEATURES=HOGE ^
+    CPU=AMD64 ^
+    ARCH=x86-64
 
 :: console x64
 nmake -f Make_mvc.mak ^
-GUI=no ^
-OLE=yes ^
-FEATURES=HOGE ^
-CPU=AMD64 ^
-ARCH=x86-64
+    GUI=no ^
+    OLE=yes ^
+    FEATURES=HOGE ^
+    CPU=AMD64 ^
+    ARCH=x86-64
 
 copy *.exe "%OUTDIR%"
 copy .\GvimExt\*.dll "%OUTDIR%"

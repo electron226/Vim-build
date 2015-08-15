@@ -46,68 +46,70 @@ rmdir /S /Q "%OUTDIR%"
 
 md "%OUTDIR%"
 copy iconv.dll "%OUTDIR%"
+copy libintl.dll "%OUTDIR%"
+
 :: Makefile with LUAJIT.
 copy Make_cyg_ming.mak %VIM_SRC%\src
 cd %VIM_SRC%\src
 
 :: Clean
 mingw32-make -f Make_ming.mak clean ^
-GUI=yes ^
-OLE=yes ^
-FEATURES=HUGE ^
-ARCH=x86-64 ^
-DIRECTX=yes ^
-STATIC_STDCPLUS=yes ^
-IME=yes ^
-DYNAMIC_IME=yes ^
-MBYTE=yes ^
-ICONV=yes ^
-GETTEXT=yes ^
-DEBUG=no
+    GUI=yes ^
+    OLE=yes ^
+    FEATURES=HUGE ^
+    ARCH=x86-64 ^
+    DIRECTX=yes ^
+    STATIC_STDCPLUS=yes ^
+    IME=yes ^
+    DYNAMIC_IME=yes ^
+    MBYTE=yes ^
+    ICONV=yes ^
+    GETTEXT=yes ^
+    DEBUG=no
 
 mingw32-make -f Make_ming.mak clean ^
-GUI=no ^
-OLE=yes ^
-FEATURES=HUGE ^
-ARCH=x86-64 ^
-DIRECTX=yes ^
-STATIC_STDCPLUS=yes ^
-IME=yes ^
-DYNAMIC_IME=yes ^
-MBYTE=yes ^
-ICONV=yes ^
-GETTEXT=yes ^
-DEBUG=no
+    GUI=no ^
+    OLE=yes ^
+    FEATURES=HUGE ^
+    ARCH=x86-64 ^
+    DIRECTX=yes ^
+    STATIC_STDCPLUS=yes ^
+    IME=yes ^
+    DYNAMIC_IME=yes ^
+    MBYTE=yes ^
+    ICONV=yes ^
+    GETTEXT=yes ^
+    DEBUG=no
 
 :: GUI x64
 mingw32-make -f Make_ming.mak ^
-GUI=yes ^
-OLE=yes ^
-FEATURES=HUGE ^
-ARCH=x86-64 ^
-DIRECTX=yes ^
-STATIC_STDCPLUS=yes ^
-IME=yes ^
-DYNAMIC_IME=yes ^
-MBYTE=yes ^
-ICONV=yes ^
-GETTEXT=yes ^
-DEBUG=no
+    GUI=yes ^
+    OLE=yes ^
+    FEATURES=HUGE ^
+    ARCH=x86-64 ^
+    DIRECTX=yes ^
+    STATIC_STDCPLUS=yes ^
+    IME=yes ^
+    DYNAMIC_IME=yes ^
+    MBYTE=yes ^
+    ICONV=yes ^
+    GETTEXT=yes ^
+    DEBUG=no
 
 :: console x64
 mingw32-make -f Make_ming.mak ^
-GUI=no ^
-OLE=yes ^
-FEATURES=HUGE ^
-ARCH=x86-64 ^
-DIRECTX=yes ^
-STATIC_STDCPLUS=yes ^
-IME=yes ^
-DYNAMIC_IME=yes ^
-MBYTE=yes ^
-ICONV=yes ^
-GETTEXT=yes ^
-DEBUG=no
+    GUI=no ^
+    OLE=yes ^
+    FEATURES=HUGE ^
+    ARCH=x86-64 ^
+    DIRECTX=yes ^
+    STATIC_STDCPLUS=yes ^
+    IME=yes ^
+    DYNAMIC_IME=yes ^
+    MBYTE=yes ^
+    ICONV=yes ^
+    GETTEXT=yes ^
+    DEBUG=no
 
 copy *.exe "%OUTDIR%"
 copy .\GvimExt\*.dll "%OUTDIR%"
