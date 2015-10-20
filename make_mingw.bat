@@ -19,7 +19,7 @@ set LUA_VER=51
 :: Lua
 ::set LUA=E:\local\lua
 ::set DYNAMIC_LUA=yes
-::set LUA_VER=52
+::set LUA_VER=53
 
 :: set PERL=C:\Perl64
 :: set PERL_VER=516
@@ -29,8 +29,8 @@ set LUA_VER=51
 set PYTHON=E:\local\python27
 set PYTHON_VER=27
 set DYNAMIC_PYTHON=yes
-set PYTHON3=E:\local\Python34
-set PYTHON3_VER=34
+set PYTHON3=E:\local\Python35
+set PYTHON3_VER=35
 set DYNAMIC_PYTHON3=yes
 
 set RUBY=E:\local\Ruby22-x64
