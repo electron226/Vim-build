@@ -4,7 +4,7 @@ set VIM_SRC=%CD%\..\vim
 set OUTDIR=%CD%\Vim
 
 :: path to MinGw64
-set MINGW_HOME=E:\local\mingw-w64\x86_64-5.1.0-win32-seh-rt_v4-rev0\mingw64
+set MINGW_HOME=E:\local\mingw-w64\x86_64-5.3.0-posix-seh-rt_v4-rev0\mingw64
 set PATH=%MINGW_HOME%;%PATH%
 set CFLAGS="-IC:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include"
 
