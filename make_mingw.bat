@@ -12,7 +12,7 @@ set USERNAME=electron226
 set USERDOMAIN=electron226@gmail.com
 
 :: LuaJIT
-set LUA=E:\local\LuaJIT-2.0.4
+set LUA=E:\local\LuaJIT-2.1.0-beta2
 set DYNAMIC_LUA=yes
 set LUA_VER=51
 
@@ -21,11 +21,6 @@ set LUA_VER=51
 ::set DYNAMIC_LUA=yes
 ::set LUA_VER=53
 
-:: set PERL=C:\Perl64
-:: set PERL_VER=516
-:: set PERLLIB=C:\Perl64\lib
-:: set DYNAMIC_PERL=yes
-
 set PYTHON=E:\local\python27
 set PYTHON_VER=27
 set DYNAMIC_PYTHON=yes
@@ -33,14 +28,14 @@ set PYTHON3=E:\local\Python35
 set PYTHON3_VER=35
 set DYNAMIC_PYTHON3=yes
 
-set RUBY=E:\local\Ruby22-x64
+set RUBY=E:\local\Ruby23-x64
 set DYNAMIC_RUBY=yes
-set RUBY_VER=22
-set RUBY_VER_LONG=2.2.0
+set RUBY_VER=23
+set RUBY_VER_LONG=2.3.0
 
 set PERL=E:\local\Perl64
 set DYNAMIC_PERL=yes
-set PERL_VER=520
+set PERL_VER=522
 
 rmdir /S /Q "%OUTDIR%"
 
