@@ -3,42 +3,44 @@ setlocal
 set VIM_SRC=%CD%\..\vim
 set OUTDIR=%CD%\Vim
 
-:: path to MinGw64
-set MINGW_HOME=E:\local\mingw-w64\x86_64-5.3.0-posix-seh-rt_v4-rev0\mingw64
+:: path of MinGw64
+set MINGW_HOME=D:\local\mingw-w64\x86_64-5.3.0-posix-seh-rt_v4-rev0\mingw64
 set PATH=%MINGW_HOME%;%PATH%
 set CFLAGS="-IC:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include"
+
+:: path of python3 of miniconda
+set MINICONDA3=D:\local\miniconda3
 
 set USERNAME=electron226
 set USERDOMAIN=electron226@gmail.com
 
 :: LuaJIT
-set LUA=E:\local\LuaJIT-2.1.0-beta2
+set LUA=D:\local\LuaJIT-2.0.4
 set DYNAMIC_LUA=yes
 set LUA_VER=51
 
 :: Lua
-::set LUA=E:\local\lua
+::set LUA=D:\local\lua
 ::set DYNAMIC_LUA=yes
 ::set LUA_VER=53
 
-set PYTHON=E:\local\python27
+set PYTHON="%MINICONDA3%\envs\py27"
 set PYTHON_VER=27
 set DYNAMIC_PYTHON=yes
-set PYTHON3=E:\local\Python35
+set PYTHON3="%MINICONDA3%"
 set PYTHON3_VER=35
 set DYNAMIC_PYTHON3=yes
 
-set RUBY=E:\local\Ruby23-x64
+set RUBY=D:\local\Ruby23-x64
 set DYNAMIC_RUBY=yes
 set RUBY_VER=23
 set RUBY_VER_LONG=2.3.0
 
-set PERL=E:\local\Perl64
+set PERL=D:\local\Perl64
 set DYNAMIC_PERL=yes
 set PERL_VER=522
 
 rmdir /S /Q "%OUTDIR%"
-
 md "%OUTDIR%"
 copy iconv.dll "%OUTDIR%"
 copy libintl.dll "%OUTDIR%"
