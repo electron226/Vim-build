@@ -20,7 +20,7 @@ set DYNAMIC_LUA=yes
 set LUA_VER=51
 
 :: Lua
-::set LUA=D:\local\lua
+::set LUA=D:\local\lua53
 ::set DYNAMIC_LUA=yes
 ::set LUA_VER=53
 
